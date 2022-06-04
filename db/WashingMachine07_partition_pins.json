@@ -4,26 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "timeExp",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "timeEn",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "newTime",
-					"strict" : false
-				},
-				{
 					"name" : "timeVal[0]",
 					"strict" : false
 				},
@@ -40,19 +20,51 @@
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[4]",
+					"name" : "newTime",
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[5]",
+					"name" : "water_valve",
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[6]",
+					"name" : "water_pump",
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[7]",
+					"name" : "spin",
+					"strict" : false
+				},
+				{
+					"name" : "rinse",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "P3",
+					"strict" : false
+				},
+				{
+					"name" : "P2",
+					"strict" : false
+				},
+				{
+					"name" : "P1",
+					"strict" : false
+				},
+				{
+					"name" : "timeExp",
+					"strict" : false
+				},
+				{
+					"name" : "porta",
 					"strict" : false
 				}
 			]

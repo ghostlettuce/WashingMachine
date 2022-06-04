@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WashingMachine07
-Sat Jun 04 17:57:17 2022
+Sat Jun 04 19:10:50 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,11 +13,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 12. lpm_mult Parameter Settings by Entity Instance
+  8. State Machine - |WashingMAchineFSM|s_pState
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
  13. Post-Synthesis Netlist Statistics for Top Partition
  14. Elapsed Time Per Partition
  15. Analysis & Synthesis Messages
@@ -47,16 +47,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 04 17:57:17 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 04 19:10:50 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; WashingMachine07                            ;
-; Top-level Entity Name              ; TimerAuxFSM                                 ;
+; Top-level Entity Name              ; WashingMAchineFSM                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 174                                         ;
-;     Total combinational functions  ; 174                                         ;
-;     Dedicated logic registers      ; 41                                          ;
-; Total registers                    ; 41                                          ;
-; Total pins                         ; 13                                          ;
+; Total logic elements               ; 48                                          ;
+;     Total combinational functions  ; 48                                          ;
+;     Dedicated logic registers      ; 11                                          ;
+; Total registers                    ; 11                                          ;
+; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; TimerAuxFSM        ; WashingMachine07   ;
+; Top-level entity name                                            ; WashingMAchineFSM  ; WashingMachine07   ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation              ; All                ;                    ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -164,40 +164,17 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
-; TimerAuxFSM.vhd                  ; yes             ; User VHDL File               ; C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM.vhd    ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc          ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_lgh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/db/add_sub_lgh.tdf ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; WashingMAchineFSM.vhd            ; yes             ; User VHDL File  ; C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -205,46 +182,91 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 174         ;
+; Estimated Total logic elements              ; 48          ;
 ;                                             ;             ;
-; Total combinational functions               ; 174         ;
+; Total combinational functions               ; 48          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 71          ;
-;     -- 3 input functions                    ; 27          ;
-;     -- <=2 input functions                  ; 76          ;
+;     -- 4 input functions                    ; 15          ;
+;     -- 3 input functions                    ; 19          ;
+;     -- <=2 input functions                  ; 14          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 87          ;
-;     -- arithmetic mode                      ; 87          ;
+;     -- normal mode                          ; 48          ;
+;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 41          ;
-;     -- Dedicated logic registers            ; 41          ;
+; Total registers                             ; 11          ;
+;     -- Dedicated logic registers            ; 11          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 13          ;
+; I/O pins                                    ; 22          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 42          ;
-; Total fan-out                               ; 650         ;
-; Average fan-out                             ; 2.70        ;
+; Maximum fan-out                             ; 11          ;
+; Total fan-out                               ; 198         ;
+; Average fan-out                             ; 1.92        ;
 +---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
-+---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Entity Name ; Library Name ;
-+---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+-------------+--------------+
-; |TimerAuxFSM                                ; 174 (124)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |TimerAuxFSM                                                                                                   ; TimerAuxFSM ; work         ;
-;    |lpm_mult:Mult0|                         ; 50 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TimerAuxFSM|lpm_mult:Mult0                                                                                    ; lpm_mult    ; work         ;
-;       |multcore:mult_core|                  ; 50 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TimerAuxFSM|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore    ; work         ;
-;          |mpar_add:padder|                  ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TimerAuxFSM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add    ; work         ;
-;             |lpm_add_sub:adder[0]|          ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TimerAuxFSM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub ; work         ;
-;                |add_sub_lgh:auto_generated| ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TimerAuxFSM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_lgh:auto_generated ; add_sub_lgh ; work         ;
-+---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
+; |WashingMAchineFSM         ; 48 (48)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |WashingMAchineFSM  ; WashingMAchineFSM ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |WashingMAchineFSM|s_pState                                                                                                                                 ;
++--------------+------------+--------------+--------------+-------------+--------------+-------------+--------------+--------------+-------------+--------------+-------------+
+; Name         ; s_pState.W ; s_pState.W2s ; s_pState.RA3 ; s_pState.S3 ; s_pState.Ra2 ; s_pState.E2 ; s_pState.Ma2 ; s_pState.RA1 ; s_pState.E1 ; s_pState.MA1 ; s_pState.S0 ;
++--------------+------------+--------------+--------------+-------------+--------------+-------------+--------------+--------------+-------------+--------------+-------------+
+; s_pState.S0  ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 0           ;
+; s_pState.MA1 ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 1            ; 1           ;
+; s_pState.E1  ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 1           ; 0            ; 1           ;
+; s_pState.RA1 ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 1            ; 0           ; 0            ; 1           ;
+; s_pState.Ma2 ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 1            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.E2  ; 0          ; 0            ; 0            ; 0           ; 0            ; 1           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.Ra2 ; 0          ; 0            ; 0            ; 0           ; 1            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.S3  ; 0          ; 0            ; 0            ; 1           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.RA3 ; 0          ; 0            ; 1            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.W2s ; 0          ; 1            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.W   ; 1          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
++--------------+------------+--------------+--------------+-------------+--------------+-------------+--------------+--------------+-------------+--------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; s_nState.S0_318                                     ; Selector19          ; yes                    ;
+; s_nState.MA1_309                                    ; Selector19          ; yes                    ;
+; s_nState.Ma2_282                                    ; Selector19          ; yes                    ;
+; s_nState.S3_255                                     ; Selector19          ; yes                    ;
+; s_nState.W2s_237                                    ; Selector19          ; yes                    ;
+; s_nState.E1_300                                     ; Selector19          ; yes                    ;
+; s_nState.E2_273                                     ; Selector19          ; yes                    ;
+; s_nState.RA3_246                                    ; Selector19          ; yes                    ;
+; s_nState.Ra2_264                                    ; Selector19          ; yes                    ;
+; s_nState.RA1_291                                    ; Selector19          ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; s_pState.W                            ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -252,128 +274,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 41    ;
-; Number of registers using Synchronous Clear  ; 1     ;
-; Number of registers using Synchronous Load   ; 1     ;
+; Total registers                              ; 11    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; s_counter[0]                            ; 2       ;
-; s_counter[1]                            ; 2       ;
-; s_counter[2]                            ; 2       ;
-; s_counter[3]                            ; 2       ;
-; s_counter[4]                            ; 2       ;
-; s_counter[5]                            ; 2       ;
-; s_counter[6]                            ; 2       ;
-; s_counter[7]                            ; 2       ;
-; s_counter[8]                            ; 2       ;
-; s_counter[9]                            ; 2       ;
-; s_counter[10]                           ; 2       ;
-; s_counter[11]                           ; 2       ;
-; s_counter[12]                           ; 2       ;
-; s_counter[13]                           ; 2       ;
-; s_counter[14]                           ; 2       ;
-; s_counter[15]                           ; 2       ;
-; s_counter[16]                           ; 2       ;
-; s_counter[17]                           ; 2       ;
-; s_counter[18]                           ; 2       ;
-; s_counter[19]                           ; 2       ;
-; s_counter[20]                           ; 2       ;
-; s_counter[21]                           ; 2       ;
-; s_counter[22]                           ; 2       ;
-; s_counter[23]                           ; 2       ;
-; s_counter[24]                           ; 2       ;
-; s_counter[25]                           ; 2       ;
-; s_counter[26]                           ; 2       ;
-; s_counter[27]                           ; 2       ;
-; s_counter[28]                           ; 2       ;
-; s_counter[29]                           ; 2       ;
-; s_counter[30]                           ; 2       ;
-; s_counter[31]                           ; 2       ;
-; s_counter[32]                           ; 2       ;
-; s_counter[33]                           ; 2       ;
-; s_counter[34]                           ; 2       ;
-; s_counter[35]                           ; 2       ;
-; s_counter[36]                           ; 2       ;
-; s_counter[37]                           ; 2       ;
-; s_counter[38]                           ; 2       ;
-; s_counter[39]                           ; 2       ;
-; Total number of inverted registers = 40 ;         ;
-+-----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |TimerAuxFSM|s_counter[0]  ;
-; 4:1                ; 33 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; Yes        ; |TimerAuxFSM|s_counter[7]  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
-+------------------------------------------------+--------------+---------------------+
-; Parameter Name                                 ; Value        ; Type                ;
-+------------------------------------------------+--------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 8            ; Untyped             ;
-; LPM_WIDTHB                                     ; 26           ; Untyped             ;
-; LPM_WIDTHP                                     ; 34           ; Untyped             ;
-; LPM_WIDTHR                                     ; 34           ; Untyped             ;
-; LPM_WIDTHS                                     ; 1            ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
-; LPM_PIPELINE                                   ; 0            ; Untyped             ;
-; LATENCY                                        ; 0            ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
-; USE_EAB                                        ; OFF          ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
-+------------------------------------------------+--------------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance         ;
-+---------------------------------------+----------------+
-; Name                                  ; Value          ;
-+---------------------------------------+----------------+
-; Number of entity instances            ; 1              ;
-; Entity Instance                       ; lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 8              ;
-;     -- LPM_WIDTHB                     ; 26             ;
-;     -- LPM_WIDTHP                     ; 34             ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
-;     -- INPUT_A_IS_CONSTANT            ; NO             ;
-;     -- INPUT_B_IS_CONSTANT            ; YES            ;
-;     -- USE_EAB                        ; OFF            ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
-+---------------------------------------+----------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; s_stateChanged                         ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -381,23 +299,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 41                          ;
-;     ENA               ; 40                          ;
-;     SCLR SLD          ; 1                           ;
-; cycloneiii_lcell_comb ; 174                         ;
-;     arith             ; 87                          ;
-;         2 data inputs ; 70                          ;
-;         3 data inputs ; 17                          ;
-;     normal            ; 87                          ;
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 11                          ;
+;     plain             ; 11                          ;
+; cycloneiii_lcell_comb ; 53                          ;
+;     normal            ; 53                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 71                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.10                        ;
-; Average LUT depth     ; 4.88                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -406,7 +320,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -416,49 +330,101 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Jun 04 17:57:06 2022
+    Info: Processing started: Sat Jun 04 19:10:39 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WashingMachine07 -c WashingMachine07
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file washingmachinefsm.vhd
+    Info (12022): Found design unit 1: WashingMAchineFSM-MelyArchy File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 23
+    Info (12023): Found entity 1: WashingMAchineFSM File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file timerauxfsm.vhd
     Info (12022): Found design unit 1: TimerAuxFSM-Behavioral File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM.vhd Line: 14
     Info (12023): Found entity 1: TimerAuxFSM File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file clkdividern.vhd
-    Info (12022): Found design unit 1: ClkDividerN-Behavioral File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/ClkDividerN.vhd Line: 11
-    Info (12023): Found entity 1: ClkDividerN File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/ClkDividerN.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file debounceunit.vhd
     Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/DebounceUnit.vhd Line: 16
     Info (12023): Found entity 1: DebounceUnit File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/DebounceUnit.vhd Line: 5
-Info (12127): Elaborating entity "TimerAuxFSM" for the top level hierarchy
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM.vhd Line: 30
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM.vhd Line: 30
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM.vhd Line: 30
-    Info (12134): Parameter "LPM_WIDTHA" = "8"
-    Info (12134): Parameter "LPM_WIDTHB" = "26"
-    Info (12134): Parameter "LPM_WIDTHP" = "34"
-    Info (12134): Parameter "LPM_WIDTHR" = "34"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
-Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
-Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lgh.tdf
-    Info (12023): Found entity 1: add_sub_lgh File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/db/add_sub_lgh.tdf Line: 23
-Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12021): Found 2 design units, including 1 entities, in source file timerauxfsm_tb.vhd
+    Info (12022): Found design unit 1: TimerAuxFSM_Tb-Stimulus File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM_Tb.vhd Line: 7
+    Info (12023): Found entity 1: TimerAuxFSM_Tb File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/TimerAuxFSM_Tb.vhd Line: 4
+Info (12127): Elaborating entity "WashingMAchineFSM" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "water_pump", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "water_valve", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "spin", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "rinse", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "s_newTime", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "timeVal", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "timeEnable", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "s_nState", which holds its previous value in one or more paths through the process File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.W" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.W2s" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.RA3" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.S3" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.Ra2" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.E2" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.Ma2" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.RA1" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.E1" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.MA1" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.S0" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeEnable" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[0]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[1]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[2]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[3]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[4]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[5]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[6]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "timeVal[7]" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_newTime" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "rinse" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "spin" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "water_valve" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "water_pump" at WashingMAchineFSM.vhd(64) File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[0]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[1]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[2]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[3]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "s_newTime" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 35
+Warning (14026): LATCH primitive "rinse$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "spin$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "water_valve$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "water_pump$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[0]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[1]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[2]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "timeVal[3]$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "s_newTime" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 35
+Warning (14026): LATCH primitive "water_valve$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "water_pump$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "spin$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (14026): LATCH primitive "rinse$latch" is permanently enabled File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (13012): Latch s_nState.S0_318 has unsafe behavior File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13012): Latch s_nState.MA1_309 has unsafe behavior File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13012): Latch s_nState.Ma2_282 has unsafe behavior File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13012): Latch s_nState.S3_255 has unsafe behavior File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "timeVal[4]" is stuck at GND File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13410): Pin "timeVal[5]" is stuck at GND File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13410): Pin "timeVal[6]" is stuck at GND File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13410): Pin "timeVal[7]" is stuck at GND File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13410): Pin "timeEnable" is stuck at VCC File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 187 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 174 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Sat Jun 04 17:57:17 2022
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "startStop" File: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMAchineFSM.vhd Line: 6
+Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 48 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 4781 megabytes
+    Info: Processing ended: Sat Jun 04 19:10:50 2022
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:26
 
 

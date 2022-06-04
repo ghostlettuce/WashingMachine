@@ -1,0 +1,14 @@
+
+State Machine - |WashingMAchineFSM|s_pState
+Name s_pState.W s_pState.W2s s_pState.RA3 s_pState.S3 s_pState.Ra2 s_pState.E2 s_pState.Ma2 s_pState.RA1 s_pState.E1 s_pState.MA1 s_pState.S0 
+s_pState.S0 0 0 0 0 0 0 0 0 0 0 0 
+s_pState.MA1 0 0 0 0 0 0 0 0 0 1 1 
+s_pState.E1 0 0 0 0 0 0 0 0 1 0 1 
+s_pState.RA1 0 0 0 0 0 0 0 1 0 0 1 
+s_pState.Ma2 0 0 0 0 0 0 1 0 0 0 1 
+s_pState.E2 0 0 0 0 0 1 0 0 0 0 1 
+s_pState.Ra2 0 0 0 0 1 0 0 0 0 0 1 
+s_pState.S3 0 0 0 1 0 0 0 0 0 0 1 
+s_pState.RA3 0 0 1 0 0 0 0 0 0 0 1 
+s_pState.W2s 0 1 0 0 0 0 0 0 0 0 1 
+s_pState.W 1 0 0 0 0 0 0 0 0 0 1 
