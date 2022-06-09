@@ -29,32 +29,16 @@ begin
 							
 );
 
-begin
+
+clk_proc : process
+		begin
 			s_clk <= '0'; wait for 10 ns;
 			s_clk <= '1'; wait for 10 ns;
 		end process;
 
 		
-stimulus_process : process 
-						begin
-						
-						s_porta =>'0'
-						s_startStop=>'1';
-						wait for 50 ns;
-						s_porta =>'1'
-						s_startStop=>'0';
-						wait for 50 ns;
-						
-						
-	
-						
-						
-						
-						
-						
-						
-						
-						
+stimulus_process : process
+		begin
 		
 		
 		
