@@ -1,0 +1,18 @@
+|Regi
+clk => outSS~reg0.CLK
+clk => outP3~reg0.CLK
+clk => outP2~reg0.CLK
+clk => outP1~reg0.CLK
+clk => outRset~reg0.CLK
+reset => outRset~reg0.DATAIN
+P1 => outP1~reg0.DATAIN
+P2 => outP2~reg0.DATAIN
+P3 => outP3~reg0.DATAIN
+startStop => outSS~reg0.DATAIN
+outRset <= outRset~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outP1 <= outP1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outP2 <= outP2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outP3 <= outP3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outSS <= outSS~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

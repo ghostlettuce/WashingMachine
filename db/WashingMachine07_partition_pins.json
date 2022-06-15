@@ -4,39 +4,23 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "timeVal[0]",
+					"name" : "outRset",
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[1]",
+					"name" : "outP1",
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[2]",
+					"name" : "outP2",
 					"strict" : false
 				},
 				{
-					"name" : "timeVal[3]",
+					"name" : "outP3",
 					"strict" : false
 				},
 				{
-					"name" : "newTime",
-					"strict" : false
-				},
-				{
-					"name" : "water_valve",
-					"strict" : false
-				},
-				{
-					"name" : "water_pump",
-					"strict" : false
-				},
-				{
-					"name" : "spin",
-					"strict" : false
-				},
-				{
-					"name" : "rinse",
+					"name" : "outSS",
 					"strict" : false
 				},
 				{
@@ -48,7 +32,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "P3",
+					"name" : "P1",
 					"strict" : false
 				},
 				{
@@ -56,15 +40,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "P1",
+					"name" : "P3",
 					"strict" : false
 				},
 				{
-					"name" : "timeExp",
-					"strict" : false
-				},
-				{
-					"name" : "porta",
+					"name" : "startStop",
 					"strict" : false
 				}
 			]

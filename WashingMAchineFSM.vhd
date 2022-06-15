@@ -20,7 +20,7 @@ entity WashingMAchineFSM is
 		
 end WashingMAchineFSM;
 
-architecture MelyArchy of WashingMAchineFSM is
+architecture Behavioral of WashingMAchineFSM is
 
 	constant waterValve_TIME  	: std_logic_vector(7 downto 0) := "00000111";	--7 seg	
 	constant waterPump_TIME		: std_logic_vector(7 downto 0) := "00000100"; 	-- 4 seg
@@ -238,6 +238,6 @@ architecture MelyArchy of WashingMAchineFSM is
 	end case;
 	
 	end process;
-end MelyArchy;	
+end Behavioral;	
 
 									
