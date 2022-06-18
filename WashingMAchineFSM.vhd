@@ -47,7 +47,7 @@ architecture Behavioral of WashingMAchineFSM is
 			--elsif (rising_edge(startStop)) then
 				
 			else
-				if (s_pState /= s_nstate) then
+				if (s_pState /= s_nstate and s_pState /= w) then
 					s_stateChanged <= '1';
 				else
 					s_stateChanged <= '0';
@@ -95,6 +95,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= E1;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;
 					else
 						s_nState <= MA1;	
 					end if;
@@ -110,6 +113,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= RA1;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;	
 					else
 						s_nState <= E1;	
 					end if;
@@ -124,6 +130,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= MA2;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;		
 					else
 						s_nState <= RA1;
 					end if;
@@ -140,6 +149,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= E2;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;		
 					else
 						s_nState <= MA2;
 					end if;
@@ -155,6 +167,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1') then
 						s_nState <= RA2;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;		
 					else
 						s_nState <= E2;
 					end if;
@@ -172,6 +187,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= s3;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;		
 					else
 						s_nState <= RA2;
 					end if;
@@ -187,7 +205,10 @@ architecture Behavioral of WashingMAchineFSM is
 					timeEnable 	<=	'1';
 					
 					if(timeExp ='1')then
-						s_nState <= RA3;
+						s_nState <= RA3;	
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;	
 					else
 						s_nState <= s3;
 					end if;
@@ -204,6 +225,9 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= W2s;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;		
 					else
 						s_nState <= RA3;
 					end if;
@@ -219,19 +243,29 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					if(timeExp ='1')then
 						s_nState <= s0;
+					elsif(startStop='1')then
+						s_nState <= W;
+						s_bStop <= s_pState;		
 					else 
 						s_nState <= W2s;
 					end if;
 					
 			
 			
---	when W =>	water_pump 	<= '0';
---					water_valve <= '0';
---					spin			<= '0';
---					rinse 		<= '0';
---					s_newTime 	<= '0';
---					timeVal 		<= (others => '-');
---					timeEnable 	<=	'0';
+	when W =>	water_pump 	<= '0';
+					water_valve <= '0';
+					spin			<= '0';
+					rinse 		<= '0';
+					s_newTime 	<= '0';
+					timeVal 		<= (others => '-');
+					timeEnable 	<=	'0';
+					
+					
+					if(startStop='1')then
+						s_nState <= s_bStop;						
+					else
+						s_nState <= w;	
+					end if;
 	
 	when others => s_nState <= s0;
 	

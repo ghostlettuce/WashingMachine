@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jun 14 22:39:02 2022
+Analysis & Synthesis Status : Successful - Sat Jun 18 21:56:14 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : WashingMachine07
-Top-level Entity Name : Regi
+Top-level Entity Name : WashingMAchineFSM
 Family : Cyclone IV E
-Total logic elements : 5
-    Total combinational functions : 0
-    Dedicated logic registers : 5
-Total registers : 5
-Total pins : 11
+Total logic elements : 76
+    Total combinational functions : 76
+    Dedicated logic registers : 12
+Total registers : 12
+Total pins : 22
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

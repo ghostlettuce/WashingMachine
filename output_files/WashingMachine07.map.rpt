@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WashingMachine07
-Tue Jun 14 22:39:02 2022
+Sat Jun 18 21:56:14 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. State Machine - |WashingMAchineFSM|s_pState
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 14 22:39:02 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 18 21:56:14 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; WashingMachine07                            ;
-; Top-level Entity Name              ; Regi                                        ;
+; Top-level Entity Name              ; WashingMAchineFSM                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 5                                           ;
-; Total registers                    ; 5                                           ;
-; Total pins                         ; 11                                          ;
+; Total logic elements               ; 76                                          ;
+;     Total combinational functions  ; 76                                          ;
+;     Dedicated logic registers      ; 12                                          ;
+; Total registers                    ; 12                                          ;
+; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Regi               ; WashingMachine07   ;
+; Top-level entity name                                            ; WashingMAchineFSM  ; WashingMachine07   ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation              ; All                ;                    ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -156,62 +159,114 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; Regi.vhd                         ; yes             ; User VHDL File  ; C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/Regi.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; WashingMAchineFSM.vhd            ; yes             ; User VHDL File  ; C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5         ;
-;                                             ;           ;
-; Total combinational functions               ; 0         ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 0         ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 0         ;
-;     -- arithmetic mode                      ; 0         ;
-;                                             ;           ;
-; Total registers                             ; 5         ;
-;     -- Dedicated logic registers            ; 5         ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 11        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 5         ;
-; Total fan-out                               ; 26        ;
-; Average fan-out                             ; 0.96      ;
-+---------------------------------------------+-----------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 76              ;
+;                                             ;                 ;
+; Total combinational functions               ; 76              ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 34              ;
+;     -- 3 input functions                    ; 26              ;
+;     -- <=2 input functions                  ; 16              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 76              ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 12              ;
+;     -- Dedicated logic registers            ; 12              ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 22              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; startStop~input ;
+; Maximum fan-out                             ; 19              ;
+; Total fan-out                               ; 302             ;
+; Average fan-out                             ; 2.29            ;
++---------------------------------------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Regi                      ; 0 (0)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |Regi               ; Regi        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
+; |WashingMAchineFSM         ; 76 (76)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |WashingMAchineFSM  ; WashingMAchineFSM ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |WashingMAchineFSM|s_pState                                                                                                                                 ;
++--------------+------------+--------------+--------------+-------------+--------------+-------------+--------------+--------------+-------------+--------------+-------------+
+; Name         ; s_pState.W ; s_pState.W2s ; s_pState.RA3 ; s_pState.S3 ; s_pState.Ra2 ; s_pState.E2 ; s_pState.Ma2 ; s_pState.RA1 ; s_pState.E1 ; s_pState.MA1 ; s_pState.S0 ;
++--------------+------------+--------------+--------------+-------------+--------------+-------------+--------------+--------------+-------------+--------------+-------------+
+; s_pState.S0  ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 0           ;
+; s_pState.MA1 ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 1            ; 1           ;
+; s_pState.E1  ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 1           ; 0            ; 1           ;
+; s_pState.RA1 ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 1            ; 0           ; 0            ; 1           ;
+; s_pState.Ma2 ; 0          ; 0            ; 0            ; 0           ; 0            ; 0           ; 1            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.E2  ; 0          ; 0            ; 0            ; 0           ; 0            ; 1           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.Ra2 ; 0          ; 0            ; 0            ; 0           ; 1            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.S3  ; 0          ; 0            ; 0            ; 1           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.RA3 ; 0          ; 0            ; 1            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.W2s ; 0          ; 1            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
+; s_pState.W   ; 1          ; 0            ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0           ; 0            ; 1           ;
++--------------+------------+--------------+--------------+-------------+--------------+-------------+--------------+--------------+-------------+--------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; s_nState.S0_1072                                    ; Selector40          ; yes                    ;
+; s_nState.MA1_1063                                   ; Selector40          ; yes                    ;
+; s_nState.Ma2_1036                                   ; Selector40          ; yes                    ;
+; s_nState.S3_1009                                    ; Selector40          ; yes                    ;
+; s_nState.W_982                                      ; Selector40          ; yes                    ;
+; s_nState.W2s_991                                    ; Selector40          ; yes                    ;
+; s_nState.E1_1054                                    ; Selector40          ; yes                    ;
+; s_nState.E2_1027                                    ; Selector40          ; yes                    ;
+; s_nState.RA3_1000                                   ; Selector40          ; yes                    ;
+; s_nState.Ra2_1018                                   ; Selector40          ; yes                    ;
+; s_nState.RA1_1045                                   ; Selector40          ; yes                    ;
+; s_bStop.MA1_929                                     ; Selector24          ; yes                    ;
+; s_bStop.Ma2_797                                     ; Selector24          ; yes                    ;
+; s_bStop.S3_665                                      ; Selector24          ; yes                    ;
+; s_bStop.W2s_577                                     ; Selector24          ; yes                    ;
+; s_bStop.E1_885                                      ; Selector24          ; yes                    ;
+; s_bStop.E2_753                                      ; Selector24          ; yes                    ;
+; s_bStop.RA3_621                                     ; Selector24          ; yes                    ;
+; s_bStop.Ra2_709                                     ; Selector24          ; yes                    ;
+; s_bStop.RA1_841                                     ; Selector24          ; yes                    ;
+; Number of user-specified and inferred latches = 20  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -219,7 +274,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 5     ;
+; Total registers                              ; 12    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -229,18 +284,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; s_stateChanged                         ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 11                              ;
-; cycloneiii_ff     ; 5                               ;
-;     plain         ; 5                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 12                          ;
+;     plain             ; 12                          ;
+; cycloneiii_lcell_comb ; 82                          ;
+;     normal            ; 82                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 34                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.56                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -258,7 +330,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jun 14 22:38:51 2022
+    Info: Processing started: Sat Jun 18 21:56:03 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WashingMachine07 -c WashingMachine07
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file washingmachinefsm_tb.vhd
@@ -279,18 +351,66 @@ Info (12021): Found 2 design units, including 1 entities, in source file regi.vh
 Info (12021): Found 2 design units, including 1 entities, in source file pulsegenerator.vhd
     Info (12022): Found design unit 1: PulseGenerator-Behavioral File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/PulseGenerator.vhd Line: 12
     Info (12023): Found entity 1: PulseGenerator File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/PulseGenerator.vhd Line: 5
-Info (12127): Elaborating entity "Regi" for the top level hierarchy
+Info (12127): Elaborating entity "WashingMAchineFSM" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(98): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(116): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(133): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(152): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(170): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(190): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(209): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 209
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(228): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 228
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(246): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 246
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(264): signal "startStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 264
+Warning (10492): VHDL Process Statement warning at WashingMAchineFSM.vhd(265): signal "s_bStop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 265
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "s_nState", which holds its previous value in one or more paths through the process File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at WashingMAchineFSM.vhd(64): inferring latch(es) for signal or variable "s_bStop", which holds its previous value in one or more paths through the process File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.W" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.W2s" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.RA3" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.S3" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.Ra2" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.E2" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.Ma2" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.RA1" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.E1" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.MA1" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_bStop.S0" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.W" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.W2s" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.RA3" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.S3" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.Ra2" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.E2" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.Ma2" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.RA1" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.E1" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.MA1" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Info (10041): Inferred latch for "s_nState.S0" at WashingMAchineFSM.vhd(64) File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+Warning (13012): Latch s_nState.S0_1072 has unsafe behavior File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13012): Latch s_nState.MA1_1063 has unsafe behavior File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13012): Latch s_nState.Ma2_1036 has unsafe behavior File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13012): Latch s_nState.S3_1009 has unsafe behavior File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_pState.S0 File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 32
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "timeVal[4]" is stuck at GND File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 13
+    Warning (13410): Pin "timeVal[5]" is stuck at GND File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 13
+    Warning (13410): Pin "timeVal[6]" is stuck at GND File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 13
+    Warning (13410): Pin "timeVal[7]" is stuck at GND File: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/WashingMAchineFSM.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4785 megabytes
-    Info: Processing ended: Tue Jun 14 22:39:02 2022
+Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 76 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 4796 megabytes
+    Info: Processing ended: Sat Jun 18 21:56:14 2022
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:28
 
 

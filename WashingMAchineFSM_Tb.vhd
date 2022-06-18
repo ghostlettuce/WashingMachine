@@ -47,13 +47,45 @@ stimulus_process : process
 						s_p1<='1';
 						s_timeExp <='1';						
 						wait for 100 ns;
+						s_porta<='1';
+						s_startStop <='1';
+						
+						
+						wait for 100ns;
+						s_porta <='1';
+						s_startStop <='0';
+						s_p2 <='1';
+						s_timeExp <='1';						
+						wait for 100 ns;
+						s_porta<='1';
+						s_startStop <='1';
+						
+						
+						wait for 100ns;
+						s_porta <='1';
+						s_startStop <='0';
+						s_p3<='1';
+						s_timeExp <='1';						
+						wait for 100 ns;
+						s_porta<='1';
+						s_startStop <='1';
+						
+						
+							
+						s_reset<='0';
+						wait for 100ns;
+						s_porta <='1';
+						s_startStop <='1';
+						s_p1<='1';
+						s_timeExp <='1';						
+						wait for 100 ns;
 						--s_porta=>'1';
 						s_startStop <='1';
 						
 						
 						wait for 100ns;
-						s_porta <='0';
-						s_startStop <='0';
+						s_porta <='1';
+						s_startStop <='1';
 						s_p2 <='1';
 						s_timeExp <='1';						
 						wait for 100 ns;
@@ -62,14 +94,13 @@ stimulus_process : process
 						
 						
 						wait for 100ns;
-						s_porta <='0';
-						s_startStop <='0';
+						s_porta <='1';
+						s_startStop <='1';
 						s_p3<='1';
 						s_timeExp <='1';						
 						wait for 100 ns;
 						--s_porta=>'1';
 						s_startStop <='1';
-						
 						
 					
 						

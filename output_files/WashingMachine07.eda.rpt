@@ -1,5 +1,5 @@
 EDA Netlist Writer report for WashingMachine07
-Tue Jun 14 22:39:27 2022
+Sat Jun 18 21:56:47 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -39,9 +39,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                 ;
 +------------------------------------+---------------------------------------+
-; EDA Netlist Writer Status          ; Successful - Tue Jun 14 22:39:27 2022 ;
+; EDA Netlist Writer Status          ; Successful - Sat Jun 18 21:56:47 2022 ;
 ; Revision Name                      ; WashingMachine07                      ;
-; Top-level Entity Name              ; Regi                                  ;
+; Top-level Entity Name              ; WashingMAchineFSM                     ;
 ; Family                             ; Cyclone IV E                          ;
 ; Simulation Files Creation          ; Successful                            ;
 ; Board Boundary Scan Files Creation ; Successful                            ;
@@ -103,7 +103,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jun 14 22:39:25 2022
+    Info: Processing started: Sat Jun 18 21:56:45 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off WashingMachine07 -c WashingMachine07
 Info (204019): Generated file WashingMachine07.vho in folder "C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/simulation/modelsim/" for EDA simulation tool
 Info: TOTAL BSCAN REGISTERS IS 540
@@ -128,8 +128,8 @@ Warning: New Pin Type Dedicated Clock
 Info: EP4CE115F29 has 540 JTAG SEQUENCE AVAILABLE
 Info (199065): Generated Boundary-Scan Description Language output file C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/board/bsd/EP4CE115F29C7_pre.bsd for board-level analysis
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4655 megabytes
-    Info: Processing ended: Tue Jun 14 22:39:27 2022
+    Info: Peak virtual memory: 4658 megabytes
+    Info: Processing ended: Sat Jun 18 21:56:47 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
