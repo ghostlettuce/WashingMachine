@@ -22,7 +22,7 @@ end WashingMAchineFSM;
 
 architecture Behavioral of WashingMAchineFSM is
 
-	constant waterValve_TIME  	: std_logic_vector(7 downto 0) := "00000111";	--7 seg	
+	constant waterValve_TIME  	: std_logic_vector(7 downto 0) := "00000111";	-- 7 seg	
 	constant waterPump_TIME		: std_logic_vector(7 downto 0) := "00000100"; 	-- 4 seg
 	constant rinse_TIME			: std_logic_vector(7 downto 0) := "00001100"; 	-- 10 seg
 	constant spin_TIME			: std_logic_vector(7 downto 0) := "00000101"; 	-- 5 seg
