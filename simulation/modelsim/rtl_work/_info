@@ -1,0 +1,75 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim
+Ewashingmachine07
+w1655671272
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+8C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd
+FC:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd
+l0
+L4 1
+VJWlVNZCo0]<H_i_j5[[?j3
+!s100 >hDTG1[[V1QdSzjA]`hoO3
+Z3 OV;C;2020.1;71
+31
+!s110 1655672641
+!i10b 1
+!s108 1655672641.000000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd|
+!s107 C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd|
+!i113 1
+o-93 -work work
+Z4 tExplicit 1 CvgOpt 0
+Ewashingmachine07_tb
+Z5 w1655672778
+R1
+R2
+!i122 4
+R0
+Z6 8C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd
+Z7 FC:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd
+l0
+L4 1
+Vb:QPKdo:8nXjeS9VVIRzk2
+!s100 D=0C`80jN>3M3L[XzZ?Om1
+R3
+32
+Z8 !s110 1655672855
+!i10b 1
+Z9 !s108 1655672855.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd|
+Z11 !s107 C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd|
+!i113 1
+Z12 o-work work
+R4
+Astimulus
+Z13 DEx4 work 16 washingmachine07 0 22 JWlVNZCo0]<H_i_j5[[?j3
+R1
+R2
+Z14 DEx4 work 19 washingmachine07_tb 0 22 b:QPKdo:8nXjeS9VVIRzk2
+!i122 4
+l18
+Z15 L7 52
+Z16 Vn44gcG07IA5ZjGZGIVXH;0
+Z17 !s100 n@<nAN;O_3U<0dF`=R;UJ2
+R3
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R4

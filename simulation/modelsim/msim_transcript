@@ -1,0 +1,192 @@
+# Reading pref.tcl
+# do WashingMachine07_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:01 on Jun 19,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity WashingMachine07
+# -- Compiling architecture Structural of WashingMachine07
+# ** Error: (vcom-11) Could not find work.debounceunit.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(26): (vcom-1195) Cannot find expanded name "work.DebounceUnit".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(26): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.debounceunit.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(31): (vcom-1195) Cannot find expanded name "work.DebounceUnit".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(31): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.debounceunit.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(36): (vcom-1195) Cannot find expanded name "work.DebounceUnit".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(36): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.debounceunit.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(41): (vcom-1195) Cannot find expanded name "work.DebounceUnit".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(41): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.debounceunit.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(46): (vcom-1195) Cannot find expanded name "work.DebounceUnit".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(46): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.debounceunit.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(51): (vcom-1195) Cannot find expanded name "work.DebounceUnit".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(51): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.washingmachinefsm.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(59): (vcom-1195) Cannot find expanded name "work.WashingMAchineFSM".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(59): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.timerauxfsm.
+# ** Error (suppressible): C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(77): (vcom-1195) Cannot find expanded name "work.TimerAuxFSM".
+# ** Error: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(77): Unknown expanded name.
+# ** Note: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd(94): VHDL Compiler exiting
+# End time: 22:04:01 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 24, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./WashingMachine07_run_msim_rtl_vhdl.do line 8
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07.vhd}"
+vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:40 on Jun 19,2022
+# vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity WashingMachine07_Tb
+# -- Compiling architecture Stimulus of WashingMachine07_Tb
+# -- Loading entity WashingMachine07
+# End time: 22:04:40 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.washingmachine07_tb
+# vsim work.washingmachine07_tb 
+# Start time: 22:04:51 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:04:51 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.washingmachine07_tb(stimulus)
+# vsim work.washingmachine07_tb(stimulus) 
+# Start time: 22:04:53 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:04:53 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.washingmachine07_tb(stimulus)
+# vsim work.washingmachine07_tb(stimulus) 
+# Start time: 22:04:58 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:04:58 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:05:26 on Jun 19,2022
+# vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity WashingMachine07_Tb
+# -- Compiling architecture Stimulus of WashingMachine07_Tb
+# -- Loading entity WashingMachine07
+# End time: 22:05:26 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.washingmachine07_tb(stimulus)
+# vsim work.washingmachine07_tb(stimulus) 
+# Start time: 22:05:31 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:05:31 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:06:28 on Jun 19,2022
+# vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity WashingMachine07_Tb
+# -- Compiling architecture Stimulus of WashingMachine07_Tb
+# -- Loading entity WashingMachine07
+# End time: 22:06:28 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.washingmachine07_tb(stimulus)
+# vsim work.washingmachine07_tb(stimulus) 
+# Start time: 22:06:32 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:06:33 on Jun 19,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.washingmachine07_tb(stimulus)
+# vsim work.washingmachine07_tb(stimulus) 
+# Start time: 22:07:30 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:07:30 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:07:35 on Jun 19,2022
+# vcom -reportprogress 300 -work work C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/WashingMachine07_Tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity WashingMachine07_Tb
+# -- Compiling architecture Stimulus of WashingMachine07_Tb
+# -- Loading entity WashingMachine07
+# End time: 22:07:35 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.washingmachine07_tb(stimulus)
+# vsim work.washingmachine07_tb(stimulus) 
+# Start time: 22:07:39 on Jun 19,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.washingmachine07_tb(stimulus)
+# ** Error: (vsim-3170) Could not find 'washingmachine07(structural)'.
+#         Searched libraries:
+#             C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/rtl_work
+# Error loading design
+# End time: 22:07:39 on Jun 19,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
