@@ -13,8 +13,8 @@ entity WashingMAchineFSM is
 			timeVal		:	out std_logic_vector(7 downto 0);
 			timeEnable 	: 	out std_logic;
 			newTime		:	out std_logic;
-			water_valve	:	out std_logic;
-			water_pump	:	out std_logic;	
+			waterValve	:	out std_logic;
+			waterPump	:	out std_logic;	
 			spin			:	out std_logic;
 			rinse 		:	out std_logic);
 		
@@ -66,8 +66,8 @@ architecture Behavioral of WashingMAchineFSM is
 	
 	case (s_pState) is	
 	
-	when s0 => 	water_pump 	<= '0';
-					water_valve <= '0';
+	when s0 => 	waterPump 	<= '0';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '0';
 					s_newTime 	<= '0';
@@ -85,8 +85,8 @@ architecture Behavioral of WashingMAchineFSM is
 	
 	
 	
-	when MA1 => water_pump 	<= '0';
-					water_valve <= '1';
+	when MA1 => waterPump 	<= '0';
+					waterValve <= '1';
 					spin			<= '0';
 					rinse 		<= '0';
 					s_newTime 	<= '1';
@@ -103,8 +103,8 @@ architecture Behavioral of WashingMAchineFSM is
 					end if;
 										
 					
-	when E1 => 	water_pump 	<= '0';
-					water_valve <= '0';
+	when E1 => 	waterPump 	<= '0';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '1';
 					s_newTime 	<= '1';
@@ -120,8 +120,8 @@ architecture Behavioral of WashingMAchineFSM is
 						s_nState <= E1;	
 					end if;
 									
-	when RA1 => water_pump 	<= '1';
-					water_valve <= '0';
+	when RA1 => waterPump 	<= '1';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '1';
 					s_newTime 	<= '1';
@@ -139,8 +139,8 @@ architecture Behavioral of WashingMAchineFSM is
 					
 													
 							
-	when MA2 => water_pump 	<= '0';
-					water_valve <= '1';
+	when MA2 => waterPump 	<= '0';
+					waterValve <= '1';
 					spin			<= '0';
 					rinse 		<= '0';
 					s_newTime 	<= '1';
@@ -157,8 +157,8 @@ architecture Behavioral of WashingMAchineFSM is
 					end if;
 					
 							
-	when E2 => 	water_pump 	<= '0';
-					water_valve <= '0';
+	when E2 => 	waterPump 	<= '0';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '1';
 					s_newTime 	<= '1';
@@ -177,8 +177,8 @@ architecture Behavioral of WashingMAchineFSM is
 																					
 							
 									
-	when RA2 => water_pump 	<= '1';
-					water_valve <= '0';
+	when RA2 => waterPump 	<= '1';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '1';
 					s_newTime 	<= '1';
@@ -196,8 +196,8 @@ architecture Behavioral of WashingMAchineFSM is
 					
 					
 					
-	when s3 => 	water_pump 	<= '1';
-					water_valve <= '0';
+	when s3 => 	waterPump 	<= '1';
+					waterValve <= '0';
 					spin			<= '1';
 					rinse 		<= '0';
 					s_newTime 	<= '1';
@@ -215,8 +215,8 @@ architecture Behavioral of WashingMAchineFSM is
 						
 				
 				
-	when RA3 => water_pump 	<= '1';
-					water_valve <= '0';
+	when RA3 => waterPump 	<= '1';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '1';
 					s_newTime 	<= '1';
@@ -233,8 +233,8 @@ architecture Behavioral of WashingMAchineFSM is
 					end if;
 					
 					
-	when W2s =>	water_pump 	<= '0';
-					water_valve <= '0';
+	when W2s =>	waterPump 	<= '0';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '0';
 					s_newTime 	<= '1';
@@ -252,8 +252,8 @@ architecture Behavioral of WashingMAchineFSM is
 					
 			
 			
-	when W =>	water_pump 	<= '0';
-					water_valve <= '0';
+	when W =>	waterPump 	<= '0';
+					waterValve <= '0';
 					spin			<= '0';
 					rinse 		<= '0';
 					s_newTime 	<= '0';

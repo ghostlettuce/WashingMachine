@@ -1,6 +1,6 @@
 Flow report for WashingMachine07
-Sat Jun 18 21:56:47 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sun Jun 19 15:54:17 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Jun 18 21:56:47 2022       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Flow Status                        ; Successful - Sun Jun 19 15:54:17 2022       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; WashingMachine07                            ;
-; Top-level Entity Name              ; WashingMAchineFSM                           ;
+; Top-level Entity Name              ; WashingMachine07                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 76 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 76 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 12 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 12                                          ;
-; Total pins                         ; 22 / 529 ( 4 % )                            ;
+; Total logic elements               ; 0 / 114,480 ( 0 % )                         ;
+;     Total combinational functions  ; 0 / 114,480 ( 0 % )                         ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 13 / 529 ( 2 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -65,39 +65,38 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/18/2022 21:56:03 ;
+; Start date & time ; 06/19/2022 15:53:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; WashingMachine07    ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                        ;
-+-------------------------------------+----------------------------------------+------------------+-------------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value    ; Entity Name       ; Section Id                        ;
-+-------------------------------------+----------------------------------------+------------------+-------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 198642183605955.165558576303388        ; --               ; --                ; --                                ;
-; EDA_BOARD_DESIGN_BOUNDARY_SCAN_TOOL ; BSDL (Boundary Scan)                   ; <None>           ; --                ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --               ; --                ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --               ; --                ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --               ; --                ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --               ; --                ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --               ; --                ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT              ; Bsdl                                   ; --               ; --                ; eda_board_design_boundary_scan    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>           ; --                ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --               ; --                ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --               ; --                ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --               ; --                ; --                                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --               ; --                ; --                                ;
-; NUM_PARALLEL_PROCESSORS             ; All                                    ; --               ; --                ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --               ; WashingMAchineFSM ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --               ; WashingMAchineFSM ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --               ; WashingMAchineFSM ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --               ; --                ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --               ; --                ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --               ; --                ; --                                ;
-; TOP_LEVEL_ENTITY                    ; WashingMAchineFSM                      ; WashingMachine07 ; --                ; --                                ;
-+-------------------------------------+----------------------------------------+------------------+-------------------+-----------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                               ;
++-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 220964526916521.165565042509568        ; --            ; --          ; --                                ;
+; EDA_BOARD_DESIGN_BOUNDARY_SCAN_TOOL ; BSDL (Boundary Scan)                   ; <None>        ; --          ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT              ; Bsdl                                   ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --                                ;
+; NUM_PARALLEL_PROCESSORS             ; All                                    ; --            ; --          ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
++-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -105,12 +104,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4796 MB             ; 00:00:28                           ;
-; Fitter               ; 00:00:19     ; 1.0                     ; 5691 MB             ; 00:00:25                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4687 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4846 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4658 MB             ; 00:00:02                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:01                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4774 MB             ; 00:00:21                           ;
+; Fitter               ; 00:00:12     ; 1.0                     ; 5668 MB             ; 00:00:15                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4685 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4842 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4657 MB             ; 00:00:02                           ;
+; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:43                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,11 +118,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-S4A9AOKC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-S4A9AOKC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-S4A9AOKC  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-S4A9AOKC  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; LAPTOP-S4A9AOKC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-U5S88PK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-U5S88PK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-U5S88PK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-U5S88PK  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-U5S88PK  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

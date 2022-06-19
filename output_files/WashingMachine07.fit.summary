@@ -1,15 +1,15 @@
-Fitter Status : Successful - Sat Jun 18 21:56:34 2022
-Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fitter Status : Successful - Sun Jun 19 15:54:07 2022
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : WashingMachine07
-Top-level Entity Name : WashingMAchineFSM
+Top-level Entity Name : WashingMachine07
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 76 / 114,480 ( < 1 % )
-    Total combinational functions : 76 / 114,480 ( < 1 % )
-    Dedicated logic registers : 12 / 114,480 ( < 1 % )
-Total registers : 12
-Total pins : 22 / 529 ( 4 % )
+Total logic elements : 0 / 114,480 ( 0 % )
+    Total combinational functions : 0 / 114,480 ( 0 % )
+    Dedicated logic registers : 0 / 114,480 ( 0 % )
+Total registers : 0
+Total pins : 13 / 529 ( 2 % )
 Total virtual pins : 0
 Total memory bits : 0 / 3,981,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )

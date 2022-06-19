@@ -5,7 +5,7 @@ entity WashingMAchineFSM_Tb is
 end WashingMAchineFSM_Tb;
 
 architecture Stimulus of WashingMAchineFSM_Tb is
-		signal s_waterValve, s_waterpump, s_spin, s_rinse, s_newTime, s_timeEnable:std_logic;
+		signal s_waterValve, s_waterPump, s_spin, s_rinse, s_newTime, s_timeEnable:std_logic;
 		
 		signal s_reset, s_startStop, s_clk, s_P1, s_P2, s_P3, s_porta, s_timeExp:std_logic;
 
@@ -19,8 +19,8 @@ begin
 								p3 			=> s_p3,
 								porta 		=> s_porta,
 								timeExp 		=>s_timeExp,
-								water_Valve => s_waterValve,
-								water_pump 	=> s_waterpump,
+								waterValve => s_waterValve,
+								waterPump 	=> s_waterPump,
 								spin 			=> s_spin,
 								rinse 		=> s_rinse,
 								newTime 		=> s_newTime,
@@ -106,7 +106,7 @@ stimulus_process : process
 						
 					
 						wait for 100 ns;
-end process;
+	end process;
 end stimulus;						
 						
 	

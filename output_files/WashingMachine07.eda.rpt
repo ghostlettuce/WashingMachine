@@ -1,6 +1,6 @@
 EDA Netlist Writer report for WashingMachine07
-Sat Jun 18 21:56:47 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sun Jun 19 15:54:17 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -39,9 +39,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                 ;
 +------------------------------------+---------------------------------------+
-; EDA Netlist Writer Status          ; Successful - Sat Jun 18 21:56:47 2022 ;
+; EDA Netlist Writer Status          ; Successful - Sun Jun 19 15:54:17 2022 ;
 ; Revision Name                      ; WashingMachine07                      ;
-; Top-level Entity Name              ; WashingMAchineFSM                     ;
+; Top-level Entity Name              ; WashingMachine07                      ;
 ; Family                             ; Cyclone IV E                          ;
 ; Simulation Files Creation          ; Successful                            ;
 ; Board Boundary Scan Files Creation ; Successful                            ;
@@ -69,13 +69,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                     ;
-+------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                ;
-+------------------------------------------------------------------------------------------------+
-; C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/simulation/modelsim/WashingMachine07.vho ;
-+------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                           ;
++------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                      ;
++------------------------------------------------------------------------------------------------------+
+; C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/WashingMachine07.vho ;
++------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------+
@@ -87,14 +87,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Board-Level Generated Files                                                               ;
-+-------------------------------------------------------------------------------------------+
-; Generated Files                                                                           ;
-+-------------------------------------------------------------------------------------------+
-; Board Boundary Scan                                                                       ;
-;     C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/board/bsd/EP4CE115F29C7_pre.bsd ;
-+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Board-Level Generated Files                                                                     ;
++-------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                 ;
++-------------------------------------------------------------------------------------------------+
+; Board Boundary Scan                                                                             ;
+;     C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/board/bsd/EP4CE115F29C7_pre.bsd ;
++-------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -102,10 +102,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Jun 18 21:56:45 2022
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Jun 19 15:54:15 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off WashingMachine07 -c WashingMachine07
-Info (204019): Generated file WashingMachine07.vho in folder "C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file WashingMachine07.vho in folder "C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/simulation/modelsim/" for EDA simulation tool
 Info: TOTAL BSCAN REGISTERS IS 540
 Info: TOTAL IO PAD COUNT IS 532
 Warning: New Pin Type UDCLK
@@ -126,10 +126,10 @@ Warning: New Pin Type Dedicated Clock
 Warning: New Pin Type Dedicated Clock
 Warning: New Pin Type Dedicated Clock
 Info: EP4CE115F29 has 540 JTAG SEQUENCE AVAILABLE
-Info (199065): Generated Boundary-Scan Description Language output file C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/board/bsd/EP4CE115F29C7_pre.bsd for board-level analysis
+Info (199065): Generated Boundary-Scan Description Language output file C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/board/bsd/EP4CE115F29C7_pre.bsd for board-level analysis
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Sat Jun 18 21:56:47 2022
+    Info: Peak virtual memory: 4657 megabytes
+    Info: Processing ended: Sun Jun 19 15:54:17 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

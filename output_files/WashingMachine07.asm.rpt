@@ -1,6 +1,6 @@
 Assembler report for WashingMachine07
-Sat Jun 18 21:56:40 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sun Jun 19 15:54:11 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/output_files/WashingMachine07.sof
+  5. Assembler Device Options: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/output_files/WashingMachine07.sof
   6. Assembler Messages
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Jun 18 21:56:40 2022 ;
+; Assembler Status      ; Successful - Sun Jun 19 15:54:11 2022 ;
 ; Revision Name         ; WashingMachine07                      ;
-; Top-level Entity Name ; WashingMAchineFSM                     ;
+; Top-level Entity Name ; WashingMachine07                      ;
 ; Family                ; Cyclone IV E                          ;
 ; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                               ;
-+-----------------------------------------------------------------------------------------+
-; File Name                                                                               ;
-+-----------------------------------------------------------------------------------------+
-; C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/output_files/WashingMachine07.sof ;
-+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                     ;
++-----------------------------------------------------------------------------------------------+
+; File Name                                                                                     ;
++-----------------------------------------------------------------------------------------------+
+; C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/output_files/WashingMachine07.sof ;
++-----------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/eduar/Desktop/ProjetoFinalLsd/WashingMachine/output_files/WashingMachine07.sof ;
-+----------------+--------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                          ;
-+----------------+--------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x005714CE                                                                                       ;
-; Checksum       ; 0x005714CE                                                                                       ;
-+----------------+--------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/audiovisuais/Desktop/WashingMachine/WashingMachine/output_files/WashingMachine07.sof ;
++----------------+--------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                ;
++----------------+--------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00562A95                                                                                             ;
+; Checksum       ; 0x00562A95                                                                                             ;
++----------------+--------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -77,15 +77,15 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Jun 18 21:56:36 2022
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Jun 19 15:54:08 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off WashingMachine07 -c WashingMachine07
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4687 megabytes
-    Info: Processing ended: Sat Jun 18 21:56:40 2022
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4686 megabytes
+    Info: Processing ended: Sun Jun 19 15:54:11 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
