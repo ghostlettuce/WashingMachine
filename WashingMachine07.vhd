@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.all;
 
 entity WashingMachine07 is
 	port(	SW			: in	std_logic_vector(4 downto 0);
-			KEY		: in	std_logic_vector(1 downto 0);
+			KEY		: in	std_logic_vector(0 downto 0);
 			CLOCK50	: in	std_logic;
 			LEDG		: out	std_logic_vector(3 downto 0);
 			LEDR		: out	std_logic_vector(0 downto 0));
@@ -11,11 +11,11 @@ end WashingMachine07;
 
 architecture Structural of WashingMachine07 is
 	-- Timer signals
-	signal s_timeExp, s_timeEnable, s_newTime, s_timeEn	: std_logic;
+	signal s_timeExp, s_timeEnable, s_newTime	: std_logic;
 	signal s_timeVal	: std_logic_vector(7 downto 0);
 	
 	-- Actuators signals
-	signal s_waterValve, s_waterPump, s_spin, s_rinse	: std_logic;
+	signal s_waterValve, s_waterPump, s_spin, s_rinse, s_washLED	: std_logic;
 	
 	signal s_p1, s_p2, s_p3, s_porta, s_reset, s_startStop	: std_logic;
 	
@@ -65,6 +65,7 @@ begin
 							P3    		=> s_p3,
 							porta       => s_porta,
 							timeExp		=> s_timeExp,
+							washLED		=> s_washLED,
 							timeVal		=> s_timeVal,
 							timeEnable 	=> s_timeEnable,
 							newTime		=> s_newTime,
@@ -77,10 +78,17 @@ begin
 				port map(reset		=> s_reset,
 							clk		=> CLOCK50,
 							newTime	=> s_newTime,
-							timeEn	=> s_timeEn,
+							timeEn	=> s_timeEnable,
 							timeVal	=> s_timeVal,
 							timeExp	=> s_timeExp);
 							
+	-- LED outputs
 	
+	LEDG(0)	<= s_waterValve;
+	LEDG(1)	<= s_waterPump;
+	LEDG(2)	<= s_spin;
+	LEDG(3)	<= s_rinse;
+	
+	LEDR(0)	<= s_washLED;
 
 end Structural;

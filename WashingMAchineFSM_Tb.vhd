@@ -5,26 +5,27 @@ entity WashingMAchineFSM_Tb is
 end WashingMAchineFSM_Tb;
 
 architecture Stimulus of WashingMAchineFSM_Tb is
-		signal s_waterValve, s_waterPump, s_spin, s_rinse, s_newTime, s_timeEnable:std_logic;
+		signal s_waterValve, s_waterPump, s_spin, s_rinse, s_newTime, s_timeEnable, s_washLED	:std_logic;
 		
-		signal s_reset, s_startStop, s_clk, s_P1, s_P2, s_P3, s_porta, s_timeExp:std_logic;
+		signal s_reset, s_startStop, s_clk, s_P1, s_P2, s_P3, s_porta, s_timeExp	:std_logic;
 
 begin 
-	 uut : entity work.WashingMAchineFSM(Behavioral)
-	port map( clk => s_clk,
-								reset 		=> s_reset,
-								startStop 	=>s_startStop,
-								P1 			=> s_P1,
-								p2 			=> s_p2,
-								p3 			=> s_p3,
-								porta 		=> s_porta,
-								timeExp 		=>s_timeExp,
-								waterValve => s_waterValve,
-								waterPump 	=> s_waterPump,
-								spin 			=> s_spin,
-								rinse 		=> s_rinse,
-								newTime 		=> s_newTime,
-								timeEnable	=> s_timeEnable);
+	 uut	: 	entity work.WashingMAchineFSM(Behavioral)
+				port map(clk => s_clk,
+							reset 		=> s_reset,
+							startStop 	=> s_startStop,
+							P1 			=> s_P1,
+							p2 			=> s_p2,
+							p3 			=> s_p3,
+							porta 		=> s_porta,
+							timeExp 		=> s_timeExp,
+							washLED		=> s_washLED,
+							waterValve 	=> s_waterValve,
+							waterPump 	=> s_waterPump,
+							spin 			=> s_spin,
+							rinse 		=> s_rinse,
+							newTime 		=> s_newTime,
+							timeEnable	=> s_timeEnable);
 								
 								
 
@@ -107,27 +108,4 @@ stimulus_process : process
 					
 						wait for 100 ns;
 	end process;
-end stimulus;						
-						
-	
-						
-						
-						
-						
-						
-						
-						
-						
-		
-		
-		
-		
-
-		
-		
-		
-		
-
-
-		
-
+end stimulus;
